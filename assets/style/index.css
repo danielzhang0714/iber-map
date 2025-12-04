@@ -2,10 +2,22 @@
 @import "reset.css";
 
 body {
-  background: linear-gradient(to bottom, rgb(14, 0, 72), rgb(62, 0, 0));
-  color: #e6edf3;
+  position: relative;
+  overflow: hidden;
   font-family: "Press Start 2P", cursive;
+  color: #e6edf3;
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to bottom, #0e00486e, #3e00006f);
+  animation: flamebackground 5s infinite linear;
+}
+
+
 
 header {
   display: flex;
@@ -48,6 +60,7 @@ header {
   font-size: 36px;
   color: #ff4d4d;
   margin-bottom: 10px;
+  text-shadow: 4px 2px #ddb53a;
 }
 
 .subtitle {
@@ -75,4 +88,19 @@ header {
   border-radius: 10px;
   overflow: hidden;
   margin-top: 30px;
+}
+
+@keyframes flamebackground {
+  0%, 40%, 80%, 100% {
+    background: linear-gradient(to bottom, rgba(7, 0, 35, 0.499), rgba(116, 0, 0, 0.461));
+  }
+  10%, 50%, 90% {
+    background: linear-gradient(to right, rgba(33, 4, 150, 0.503), rgba(137, 1, 1, 0.474));
+  }
+  20%, 60% {
+    background: linear-gradient(to top, rgba(40, 2, 192, 0.458), rgba(198, 0, 0, 0.439));
+  }
+  30%, 70% {
+    background: linear-gradient(to left, rgba(51, 0, 255, 0.476), rgba(255, 0, 0, 0.442));
+  }
 }
