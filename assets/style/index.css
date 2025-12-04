@@ -81,6 +81,12 @@ header {
   margin-bottom: 30px;
 }
 
+.track:hover {
+  box-shadow: 2px 6px 8px #666;
+  transition: 0.4s ease-in-out;
+  scale: 1.2;
+}
+
 #map {
   width: min(95%, 1000px);
   height: 450px;
